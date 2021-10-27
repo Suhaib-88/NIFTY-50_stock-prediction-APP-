@@ -23,7 +23,7 @@ stocks =('SHREECEM', 'SUNPHARMA', 'TATAMOTORS', 'TCS', 'SBIN', 'NESTLEIND',
 
 selected_stock = st.selectbox('Select a stock for prediction', stocks)
 
-min_date = datetime.date(2019,5,31)
+min_date = datetime.date(2020,7,5)
 max_date = datetime.date(2021,10,13)
 
 pred_date=st.date_input("Select a date and model predicts stock price",min_value=min_date,value=max_date,max_value=max_date)
@@ -43,7 +43,7 @@ ML Technology used: LSTM Neural Network
 
 @st.cache
 def load_data(date,ticker):
-    data=pd.read_csv('Final-50-stocks .csv')
+    data=pd.read_csv('Final-stocks.csv')
     data.reset_index(inplace=True)
     return data[[date,ticker]]
 
